@@ -1,0 +1,8 @@
+Los arreglos son estrcuturas de datos con un orden especifico mediante el cual se pueden acceder a sus elementos 
+con sus respectivos indices un  metodo que puede ayudar a esto es el 
+array_search(); 
+devuelve un indice si se encuentra 
+y como este hay mas funciones 
+array_slice()retorna una rebanda de elementos segun se le indique primero desde donde comienza y luego donde termina
+array_merge()combina dos arreglos 
+array_filter()filtra los elementos segun una funcion o condicion indicada

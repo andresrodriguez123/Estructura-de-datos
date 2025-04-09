@@ -1,0 +1,11 @@
+La colas y pilas son estrcuturas de datos que consevan cada una un principio fundamental
+FIFO & LIFO de esta manera se acomodan o se pueden acceder a sus elementos 
+se crean como arreglos en php:
+$pila = array();
+$cola = array();
+se pueden agregar elementos las dos con push, priemro se indica el arreglo y despues el elemnto
+array_push($pila,1);
+array_push($cola,1);
+se pueden elimnar su elemntos respecto a su principios pilas con pop y colas con shift
+array_pop($pilas);
+array_shift($colas);
