@@ -1,0 +1,55 @@
+<?php
+    class Nodo //se crea una clase de Nodo
+    {
+        public $dato;
+        public $siguiente;
+
+        public function __construct($dato) 
+        {
+            $this->dato = $dato;
+            $this->siguiente = null;
+        }
+    }
+    class ListaEnlazada //se crea lista enlazada
+    {
+        public $cabeza;
+        public function __construct()
+        {
+            $this ->cabeza = null;
+        }
+        public function insertar($dato):void // funcion para insetar datos en la lista
+        {
+            $nuevoNodo = new Nodo($dato);
+            $nuevoNodo->siguiente = $this->cabeza;
+            $this->cabeza = $nuevoNodo;
+        }
+
+        public function imprimirLista() // musetra la lista
+        {
+            $actual = $this->cabeza;
+            while($actual != null)
+            {
+                echo "Dato: ".$actual->dato."\n";
+                $actual = $actual->siguiente;
+            }
+        }
+    }
+    $lista = new ListaEnlazada(); // se crae un objeto tipo ListaEnlazada
+    echo "Ingrese el numero de repeticiones del bucle: ";//se le pide al usuario un numero 
+    $n = fgets(STDIN);
+    $n = trim($n);
+    $n = (int)$n;
+
+    for($i = 0; $i < $n; $i++)//con un for se recorre para que el usuario ingrese elementos tantas veces se el numero ingresado 
+    {
+        echo "Ingrese un numero a la lista: ";//se le pide el numero que desea ingresar a la lista 
+        $numeroLista = fgets(STDIN);
+        $numeroLista = trim($numeroLista);
+        $numeroLista = (int)$numeroLista;
+        $lista->insertar($numeroLista);//se llama a la funcion de la clase para insetar el numero
+    }
+    $lista->imprimirLista();//por ultimo se muestra la lista con su funcion imprimirLista()
+
+?>
+ 
+

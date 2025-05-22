@@ -1,0 +1,56 @@
+Este código implementa una estructura de datos llamada grafo usando la programación orientada a objetos en PHP. Un grafo es un conjunto de nodos (llamados vértices) conectados entre sí mediante aristas (conexiones o enlaces).
+
+1. Clase Grafo
+La clase tiene dos propiedades:
+
+$vertices: un arreglo donde se guardan los nombres de los nodos.
+
+$aristas: un arreglo asociativo que almacena las conexiones entre los nodos.
+
+2. Método __construct()
+Es el constructor de la clase. Inicializa los arreglos $vertices y $aristas como vacíos.
+
+3. Método agregarVertices($vertice)
+Recibe el nombre de un nodo y lo agrega al arreglo de vértices.
+
+También crea una entrada vacía en el arreglo $aristas para ese vértice, donde más adelante se almacenarán sus conexiones.
+
+Tiene una anotación :void que indica que la función no retorna nada.
+
+4. Método agregarAristas($vertice1, $vertice2)
+Crea una conexión entre dos vértices.
+
+Como el grafo es no dirigido (bidireccional), agrega cada vértice a la lista de conexiones del otro.
+
+5. Método imprimirGrafo()
+Recorre todos los vértices y muestra con qué otros vértices están conectados.
+
+Imprime el formato: A->B C, lo que significa que A está conectado con B y C.
+
+6. Creación del grafo y prueba
+php
+Copiar
+Editar
+$miGrafo = new Grafo();
+$miGrafo->agregarVertices("A");
+$miGrafo->agregarVertices("B");
+$miGrafo->agregarVertices("C");
+$miGrafo->agregarVertices("D");
+Se crean cuatro vértices: A, B, C y D.
+
+php
+Copiar
+Editar
+$miGrafo -> agregarAristas("A","B");
+$miGrafo -> agregarAristas("B","C");
+$miGrafo -> agregarAristas("C","A");
+$miGrafo -> agregarAristas("B","D");
+Se conectan los nodos con aristas. Por ejemplo, A se conecta con B, B con C, etc.
+
+7. Impresión del grafo
+php
+Copiar
+Editar
+echo "El grafo es: \n";
+$miGrafo -> imprimirGrafo();
+Se imprime la estructura completa del grafo.

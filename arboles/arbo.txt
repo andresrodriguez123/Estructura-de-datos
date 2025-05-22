@@ -1,0 +1,101 @@
+Explicación del código PHP - Árbol Binario de Búsqueda
+
+Este código implementa un árbol binario de búsqueda (ABB) en PHP. Es una estructura de datos donde cada nodo tiene como máximo dos hijos, y los valores se organizan de tal forma que:
+
+Los valores menores al nodo actual van a la izquierda.
+
+Los valores mayores van a la derecha.
+
+1. Clase Nodo
+Esta clase representa cada nodo del árbol.
+
+Propiedades:
+
+$valor: almacena el valor del nodo.
+
+$izquierdo: referencia al hijo izquierdo (otro nodo o null).
+
+$derecho: referencia al hijo derecho (otro nodo o null).
+
+Constructor:
+
+Inicializa el valor recibido.
+
+Establece los hijos izquierdo y derecho como null.
+
+2. Clase ArbolBinario
+Representa el árbol completo.
+
+Propiedad privada:
+
+$raiz: representa el nodo raíz del árbol.
+
+Constructor:
+
+Inicializa la raíz como null. (Nota: en el código original hay un error: = $null; debería ser = null;)
+
+3. Método insertar($valor)
+Agrega un valor al árbol.
+
+Llama a la función recursiva insertarRec() para insertar el valor correctamente según las reglas del ABB.
+
+4. Método insertarRec($nodo, $valor)
+Funciona de forma recursiva:
+
+Si el nodo es null, crea y devuelve un nuevo Nodo.
+
+Si el valor es menor al del nodo actual, se inserta en el subárbol izquierdo.
+
+Si es mayor, se inserta en el subárbol derecho.
+
+Devuelve el nodo actualizado para mantener las conexiones.
+
+5. Recorridos del árbol
+El código permite imprimir los valores del árbol de tres formas distintas:
+
+a) inOrden()
+Ordena los valores de menor a mayor:
+
+Izquierda → Nodo actual → Derecha
+
+b) preOrden()
+Visita primero la raíz, luego la izquierda y luego la derecha:
+
+Nodo actual → Izquierda → Derecha
+
+c) postOrden()
+Visita primero los subárboles y luego la raíz:
+
+Izquierda → Derecha → Nodo actual
+
+Cada recorrido llama a su método recursivo respectivo (inOrdenRec, preOrdenRec, postOrdenRec), que imprime los valores de los nodos.
+
+6. Uso del árbol
+php
+Copiar
+Editar
+$arbol = new ArbolBinario();
+$arbol->insertar(50);
+$arbol->insertar(30);
+$arbol->insertar(70);
+$arbol->insertar(20);
+$arbol->insertar(40);
+$arbol->insertar(60);
+$arbol->insertar(80);
+Se insertan varios valores en el árbol.
+
+El árbol queda estructurado con 50 como raíz, 30 a la izquierda, 70 a la derecha, y así sucesivamente.
+
+7. Impresión de los recorridos
+php
+Copiar
+Editar
+echo "Recorrdio Inorden:\n";
+$arbol ->inOrden();
+
+echo "Recorrido Preorden:\n";
+$arbol ->preOrden();
+
+echo "Recorrido Postorden:\n";
+$arbol ->postOrden();
+Se imprime cada recorrido para visualizar el contenido del árbol en diferentes órdenes
